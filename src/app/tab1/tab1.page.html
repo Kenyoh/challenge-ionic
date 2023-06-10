@@ -1,17 +1,75 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-text color="tertiary">
+    <h3>Nama : Mohamad Wildan Fathurrohman</h3>
+    <h3>NIM : 21416255201056</h3>
+    <h3>Kelas: IF21C</h3>
+  </ion-text>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-content>
+    <form (ngSubmit)="submitForm()">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Nama</ion-label>
+          <ion-input type="text" name="name" [(ngModel)]="formData.name" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Tempat/Tgl lahir</ion-label>
+          <ion-input type="text" name="birth" [(ngModel)]="formData.birth" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Jenis kelamin</ion-label>
+          <ion-input type="text" name="gender" [(ngModel)]="formData.gender" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Alamat</ion-label>
+          <ion-input type="text" name="address" [(ngModel)]="formData.address" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Agama</ion-label>
+          <ion-input type="text" name="religion" [(ngModel)]="formData.religion" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Status Perkawinan</ion-label>
+          <ion-input type="text" name="maritalStatus" [(ngModel)]="formData.maritalStatus" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Pekerjaan</ion-label>
+          <ion-input type="text" name="occupation" [(ngModel)]="formData.occupation" required></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Kewarganegaraan</ion-label>
+          <ion-input type="text" name="citizenship" [(ngModel)]="formData.citizenship" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nomor telepon</ion-label>
+          <ion-input type="text" name="noHP" [(ngModel)]="formData.phoneNumber" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">email</ion-label>
+          <ion-input type="text" name="email" [(ngModel)]="formData.email" required></ion-input>
+        </ion-item>
+  
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="full" (click)="submitToWhatsApp()">Send to WhatsApp</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button type="submit" expand="full" (click)="submitToTelegram()">Send to Telegram</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button type="submit" expand="full" (click)="submitToEmail()">Send to Email</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+  </ion-content>
 </ion-content>
